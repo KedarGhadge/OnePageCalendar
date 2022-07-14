@@ -4,9 +4,146 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <link rel="stylesheet" href="myCalendar.css" />
+    <title>My Calendar</title>
   </head>
-  <body>
-    s
+  <body onload="CalendarApp()">
+    <table class="tg">
+      <thead>
+        <tr>
+          <th class="" colspan="5" rowspan="3">
+            <button id="L-arrow" onclick="prevYear()">&#171;</button>&nbsp;
+            &nbsp; &nbsp; <span id="calendar-year">&nbsp; &nbsp; &nbsp; </span
+            ><button id="R-arrow" onclick="nextYear()">&#187;</button>
+          </th>
+          <th class="tg-0lax" id="d-mon0"></th>
+          <th class="tg-0lax" id="d-tue0"></th>
+          <th class="tg-0lax" id="d-wed0"></th>
+          <th class="tg-0lax" id="d-thu0"></th>
+          <th class="tg-0lax" id="d-fri0"></th>
+          <th class="tg-0lax" id="d-sat0"></th>
+          <th class="tg-0lax" id="d-sun0"></th>
+        </tr>
+        <tr>
+          <th class="tg-0lax" id="d-mon1"></th>
+          <th class="tg-0lax" id="d-tue1"></th>
+          <th class="tg-0lax" id="d-wed1"></th>
+          <th class="tg-0lax" id="d-thu1"></th>
+          <th class="tg-0lax" id="d-fri1"></th>
+          <th class="tg-0lax" id="d-sat1"></th>
+          <th class="tg-0lax" id="d-sun1"></th>
+        </tr>
+        <tr>
+          <th class="tg-0lax" id="d-mon2"></th>
+          <th class="tg-0lax" id="d-tue2"></th>
+          <th class="tg-0lax" id="d-wed2"></th>
+          <th class="tg-0lax" id="d-thu2"></th>
+          <th class="tg-0lax" id="d-fri2"></th>
+          <th class="tg-0lax" id="d-sat2"></th>
+          <th class="tg-0lax" id="d-sun2"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="tg-0lax">1</td>
+          <td class="tg-0lax">8</td>
+          <td class="tg-0lax">15</td>
+          <td class="tg-0lax">22</td>
+          <td class="tg-0lax">29</td>
+          <td class="tg-0lax">Mon</td>
+          <td class="tg-0lax">Tue</td>
+          <td class="tg-0lax">Wed</td>
+          <td class="tg-0lax">Thu</td>
+          <td class="tg-0lax">Fri</td>
+          <td class="tg-0lax">Sat</td>
+          <td class="tg-0lax">Sun</td>
+        </tr>
+        <tr>
+          <td class="tg-0lax">2</td>
+          <td class="tg-0lax">9</td>
+          <td class="tg-0lax">16</td>
+          <td class="tg-0lax">23</td>
+          <td class="tg-0lax">30</td>
+          <td class="tg-0lax">Tue</td>
+          <td class="tg-0lax">Wed</td>
+          <td class="tg-0lax">Thu</td>
+          <td class="tg-0lax">Fri</td>
+          <td class="tg-0lax">Sat</td>
+          <td class="tg-0lax">Sun</td>
+          <td class="tg-0lax">Mon</td>
+        </tr>
+        <tr>
+          <td class="tg-0lax">3</td>
+          <td class="tg-0lax">10</td>
+          <td class="tg-0lax">17</td>
+          <td class="tg-0lax">24</td>
+          <td class="tg-0lax">31</td>
+          <td class="tg-0lax">Wed</td>
+          <td class="tg-0lax">Thu</td>
+          <td class="tg-0lax">Fri</td>
+          <td class="tg-0lax">Sat</td>
+          <td class="tg-0lax">Sun</td>
+          <td class="tg-0lax">Mon</td>
+          <td class="tg-0lax">Tue</td>
+        </tr>
+        <tr>
+          <td class="tg-0lax">4</td>
+          <td class="tg-0lax">11</td>
+          <td class="tg-0lax">18</td>
+          <td class="tg-0lax">25</td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax">Thu</td>
+          <td class="tg-0lax">Fri</td>
+          <td class="tg-0lax">Sat</td>
+          <td class="tg-0lax">Sun</td>
+          <td class="tg-0lax">Mon</td>
+          <td class="tg-0lax">Tue</td>
+          <td class="tg-0lax">Wed</td>
+        </tr>
+        <tr>
+          <td class="tg-0lax">5</td>
+          <td class="tg-0lax">12</td>
+          <td class="tg-0lax">29</td>
+          <td class="tg-0lax">26</td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax">Fri</td>
+          <td class="tg-0lax">Sat</td>
+          <td class="tg-0lax">Sun</td>
+          <td class="tg-0lax">Mon</td>
+          <td class="tg-0lax">Tue</td>
+          <td class="tg-0lax">Wed</td>
+          <td class="tg-0lax">Thu</td>
+        </tr>
+        <tr>
+          <td class="tg-0lax">6</td>
+          <td class="tg-0lax">13</td>
+          <td class="tg-0lax">20</td>
+          <td class="tg-0lax">27</td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax">Sat</td>
+          <td class="tg-0lax">Sun</td>
+          <td class="tg-0lax">Mon</td>
+          <td class="tg-0lax">Tue</td>
+          <td class="tg-0lax">Wed</td>
+          <td class="tg-0lax">Thu</td>
+          <td class="tg-0lax">Fri</td>
+        </tr>
+        <tr>
+          <td class="tg-0lax">7</td>
+          <td class="tg-0lax">14</td>
+          <td class="tg-0lax">21</td>
+          <td class="tg-0lax">28</td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax">Sun</td>
+          <td class="tg-0lax">Mon</td>
+          <td class="tg-0lax">Tue</td>
+          <td class="tg-0lax">Wed</td>
+          <td class="tg-0lax">Thu</td>
+          <td class="tg-0lax">Fri</td>
+          <td class="tg-0lax">Sat</td>
+        </tr>
+      </tbody>
+    </table>
+    <script src="myCalendar.js"></script>
   </body>
 </html>
