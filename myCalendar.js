@@ -3,7 +3,8 @@ var myDate;
 var myMonth;
 var selectedDate;
 var selectedMonth;
-this.aptDates = ["4", "7"];
+var childToUpdate;
+this.aptDates = [];
 this.year = document.getElementById("calendar-year");
 //Kedar: On page load this function will get call
 function CalendarApp(date) {
@@ -213,6 +214,7 @@ $(".tg-0lax-month").on({
     $(this).addClass("monthSelect");
 
     notifyAgenda();
+    highlightToday();
     // showMonthwiseDates();
   },
 });
@@ -244,9 +246,13 @@ $(function () {
     if (isValidDate(myYear, selectedMonth, selectedDate)) {
       if ($(this).hasClass("selected")) {
         deselect($(this));
+        document.getElementById("message_submit").value = "Add";
+        document.getElementById("mytext").value = "";
       } else {
         $(this).addClass("selected");
         $(".pop").slideFadeToggle();
+        document.getElementById("message_submit").value = "Add";
+        document.getElementById("mytext").value = "";
       }
 
       // $('#imDate').replaceWith("You Selected Date " + selectedDate);
@@ -277,6 +283,8 @@ $(function () {
   });
 
   $(".mclose").on("click", function () {
+    document.getElementById("message_submit").value = "Add";
+    document.getElementById("mytext").value = "";
     deselect($(".tg-0lax-day"));
     return false;
   });
@@ -294,50 +302,62 @@ $.fn.slideFadeToggle = function (easing, callback) {
 //Kedar: code for add items and remove items from agenda
 // Create a new list item when clicking on the "Add" button
 function newElement() {
-  var li = document.createElement("li");
-  var inputValue = document.getElementById("mytext").value;
-  var t = document.createTextNode(inputValue);
-  li.appendChild(t);
-  if (inputValue === "") {
-    alert("You must write something!");
-  } else {
-    document.getElementById("myUL").appendChild(li);
-    var mytask = new Object();
-    mytask.date = selectedDate + " " + selectedMonth + " " + myYear;
-    mytask.containt = inputValue;
-    this.aptDates.push(mytask);
-    notifyAgenda();
-  }
-  document.getElementById("mytext").value = "";
-
-  var span = document.createElement("SPAN");
-  var txt = document.createTextNode("\u00D7");
-  var span2 = document.createElement("SPAN");
-  span.className = "close";
-  span2.className = "forMapping";
-  span.appendChild(txt);
-  li.appendChild(span);
-  var txt2 = document.createTextNode(
-    selectedDate + " " + selectedMonth + " " + myYear
-  );
-  span2.appendChild(txt2);
-  li.appendChild(span2);
-  for (i = 0; i < close.length; i++) {
-    close[i].onclick = function () {
-      var div = this.parentElement;
-      div.remove(); //below line not working after making changes for showing agenda day specific so wrote this line.
-      // div.style.display = "none";
-      // var index = aptDates
-      //   .map((object) => object.date)
-      //   .indexOf(selectedDate + " " + selectedMonth + " " + myYear);
-      var index = aptDates.findIndex(
-        (element) =>
-          element.date == selectedDate + " " + selectedMonth + " " + myYear &&
-          element.containt == this.parentElement.childNodes[0].textContent
-      );
-      aptDates.splice(index, 1);
+  if (document.getElementById("message_submit").value == "Add") {
+    var li = document.createElement("li");
+    var inputValue = document.getElementById("mytext").value;
+    var t = document.createTextNode(inputValue);
+    li.appendChild(t);
+    if (inputValue === "") {
+      alert("You must write something!");
+    } else {
+      document.getElementById("myUL").appendChild(li);
+      var mytask = new Object();
+      mytask.date = selectedDate + " " + selectedMonth + " " + myYear;
+      mytask.containt = inputValue;
+      this.aptDates.push(mytask);
       notifyAgenda();
-    };
+    }
+    document.getElementById("mytext").value = "";
+
+    var span = document.createElement("SPAN");
+    var txt = document.createTextNode("\u00D7");
+    var span2 = document.createElement("SPAN");
+    span.className = "close";
+    span2.className = "forMapping";
+    span.appendChild(txt);
+    li.appendChild(span);
+    var txt2 = document.createTextNode(
+      selectedDate + " " + selectedMonth + " " + myYear
+    );
+    span2.appendChild(txt2);
+    li.appendChild(span2);
+    for (i = 0; i < close.length; i++) {
+      close[i].onclick = function () {
+        var div = this.parentElement;
+        div.remove(); //below line not working after making changes for showing agenda day specific so wrote this line.
+        // div.style.display = "none";
+        // var index = aptDates
+        //   .map((object) => object.date)
+        //   .indexOf(selectedDate + " " + selectedMonth + " " + myYear);
+        var index = aptDates.findIndex(
+          (element) =>
+            element.date == selectedDate + " " + selectedMonth + " " + myYear &&
+            element.containt == this.parentElement.childNodes[0].textContent
+        );
+        aptDates.splice(index, 1);
+        notifyAgenda();
+      };
+    }
+  } else {
+    document.getElementById("message_submit").value = "Add";
+    var index = aptDates.findIndex(
+      (element) =>
+        element.date == selectedDate + " " + selectedMonth + " " + myYear &&
+        element.containt == childToUpdate.textContent
+    );
+    aptDates[index].containt = document.getElementById("mytext").value;
+    childToUpdate.textContent = document.getElementById("mytext").value;
+    document.getElementById("mytext").value = "";
   }
 }
 
@@ -400,6 +420,11 @@ function isValidDate(year, month, day) {
 function highlightToday() {
   date = new Date();
   month = toMonthName(date.getMonth());
+  elements = document.getElementsByTagName("td");
+  for (var j = elements.length; j--; ) {
+    if (elements[j].classList.contains("today"))
+      elements[j].classList.remove("today");
+  }
   if (date.getFullYear() == myYear && month == selectedMonth) {
     elements = document.getElementsByTagName("td");
     for (var j = elements.length; j--; ) {
@@ -408,3 +433,13 @@ function highlightToday() {
     }
   }
 }
+
+var list = document.querySelector("ul");
+list.addEventListener("click", function (ev) {
+  if (ev.target.tagName === "LI") {
+    document.getElementById("mytext").value =
+      this.childNodes[0].childNodes[0].textContent;
+    document.getElementById("message_submit").value = "Update";
+    childToUpdate = this.childNodes[0].childNodes[0];
+  }
+});
