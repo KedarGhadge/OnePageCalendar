@@ -29,10 +29,7 @@
   vertical-align: top;
   height: 20px;
 }
-span {
-  font-size: 75px;
-  padding: 10px 5px;
-}
+
 #L-arrow {
   color: red;
   text-align: left;
@@ -42,19 +39,20 @@ span {
 }
 #calendar-year {
   text-align: center;
+  font-size: 75px;
+  padding: 10px 5px;
 }
 
-
 .messagepop {
-  background-color:#FFFFFF;
-  border:1px solid #999999;
-  cursor:default;
-  display:none;
+  background-color: #ffffff;
+  border: 1px solid #999999;
+  cursor: default;
+  display: none;
   margin-top: 15px;
-  position:absolute;
-  text-align:left;
-  width:394px;
-  z-index:50;
+  position: absolute;
+  text-align: left;
+  width: 394px;
+  z-index: 50;
   padding: 25px 25px 20px;
 }
 
@@ -65,8 +63,61 @@ label {
   text-indent: -15px;
 }
 
-.messagepop p, .messagepop.div {
-  border-bottom: 1px solid #EFEFEF;
+.messagepop p,
+.messagepop.div {
+  border-bottom: 1px solid #efefef;
   margin: 8px 0;
   padding-bottom: 8px;
+}
+
+.booked {
+  display: block;
+  font-weight: bold;
+}
+
+.monthSelect {
+  display: block;
+  font-weight: bold;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+/* Style the list items */
+ul li {
+  cursor: pointer;
+  position: relative;
+  padding: 12px 8px 12px 40px;
+  list-style-type: none;
+  background: #eee;
+  font-size: 18px;
+  transition: 0.2s;
+
+  /* make the list items unselectable */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Style the close button */
+.close {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 12px 16px 12px 16px;
+}
+
+.close:hover {
+  background-color: #f44336;
+  color: white;
+}
+.forMapping {
+  display: none;
+}
+.today {
+  font-weight: 20px;
+  background-color: #f44336;
 }

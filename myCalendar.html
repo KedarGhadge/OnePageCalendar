@@ -5,16 +5,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="myCalendar.css" />
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">  
-    </script>  
+    <script
+      type="text/javascript"
+      src="http://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+    ></script>
     <title>My Calendar</title>
   </head>
   <body onload="CalendarApp()">
     <div class="messagepop pop">
       <div id="new_message" action="">
-        <p><label for="text">Your task</label><input type="text" size="30" name="text" id="text" /></p>
+        <p id="imDate"></p>
+        <ul id="myUL"></ul>
+        <p>
+          <label for="text">Your task</label
+          ><input type="text" size="30" name="text" id="mytext" />
+        </p>
         <!-- <p><label for="body">Message</label><textarea rows="6" name="body" id="body" cols="35"></textarea></p> -->
-        <p><input type="button" value="Add" name="commit" id="message_submit"/> or <a class="close" href="/">Cancel</a></p>
+        <p>
+          <input
+            type="button"
+            value="Add"
+            name="commit"
+            id="message_submit"
+            onclick="newElement()"
+          />
+          or <a class="mclose" href="/">Cancel</a>
+        </p>
       </div>
     </div>
     <table class="tg">
@@ -25,40 +41,40 @@
             &nbsp; &nbsp; <span id="calendar-year">&nbsp; &nbsp; &nbsp; </span
             ><button id="R-arrow" onclick="nextYear()">&#187;</button>
           </th>
-          <th class="tg-0lax" id="d-mon0"></th>
-          <th class="tg-0lax" id="d-tue0"></th>
-          <th class="tg-0lax" id="d-wed0"></th>
-          <th class="tg-0lax" id="d-thu0"></th>
-          <th class="tg-0lax" id="d-fri0"></th>
-          <th class="tg-0lax" id="d-sat0"></th>
-          <th class="tg-0lax" id="d-sun0"></th>
+          <th class="tg-0lax-month" id="d-mon0"></th>
+          <th class="tg-0lax-month" id="d-tue0"></th>
+          <th class="tg-0lax-month" id="d-wed0"></th>
+          <th class="tg-0lax-month" id="d-thu0"></th>
+          <th class="tg-0lax-month" id="d-fri0"></th>
+          <th class="tg-0lax-month" id="d-sat0"></th>
+          <th class="tg-0lax-month" id="d-sun0"></th>
         </tr>
         <tr>
-          <th class="tg-0lax" id="d-mon1"></th>
-          <th class="tg-0lax" id="d-tue1"></th>
-          <th class="tg-0lax" id="d-wed1"></th>
-          <th class="tg-0lax" id="d-thu1"></th>
-          <th class="tg-0lax" id="d-fri1"></th>
-          <th class="tg-0lax" id="d-sat1"></th>
-          <th class="tg-0lax" id="d-sun1"></th>
+          <th class="tg-0lax-month" id="d-mon1"></th>
+          <th class="tg-0lax-month" id="d-tue1"></th>
+          <th class="tg-0lax-month" id="d-wed1"></th>
+          <th class="tg-0lax-month" id="d-thu1"></th>
+          <th class="tg-0lax-month" id="d-fri1"></th>
+          <th class="tg-0lax-month" id="d-sat1"></th>
+          <th class="tg-0lax-month" id="d-sun1"></th>
         </tr>
         <tr>
-          <th class="tg-0lax" id="d-mon2"></th>
-          <th class="tg-0lax" id="d-tue2"></th>
-          <th class="tg-0lax" id="d-wed2"></th>
-          <th class="tg-0lax" id="d-thu2"></th>
-          <th class="tg-0lax" id="d-fri2"></th>
-          <th class="tg-0lax" id="d-sat2"></th>
-          <th class="tg-0lax" id="d-sun2"></th>
+          <th class="tg-0lax-month" id="d-mon2"></th>
+          <th class="tg-0lax-month" id="d-tue2"></th>
+          <th class="tg-0lax-month" id="d-wed2"></th>
+          <th class="tg-0lax-month" id="d-thu2"></th>
+          <th class="tg-0lax-month" id="d-fri2"></th>
+          <th class="tg-0lax-month" id="d-sat2"></th>
+          <th class="tg-0lax-month" id="d-sun2"></th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td class="tg-0lax-day" >1</td>
-          <td class="tg-0lax-day" >8</td>
-          <td class="tg-0lax-day" >15</td>
-          <td class="tg-0lax-day" >22</td>
-          <td class="tg-0lax-day" >29</td>
+          <td class="tg-0lax-day">1</td>
+          <td class="tg-0lax-day">8</td>
+          <td class="tg-0lax-day">15</td>
+          <td class="tg-0lax-day">22</td>
+          <td class="tg-0lax-day">29</td>
           <td class="tg-0lax">Mon</td>
           <td class="tg-0lax">Tue</td>
           <td class="tg-0lax">Wed</td>
@@ -68,11 +84,11 @@
           <td class="tg-0lax">Sun</td>
         </tr>
         <tr>
-          <td class="tg-0lax-day" >2</td>
-          <td class="tg-0lax-day" >9</td>
-          <td class="tg-0lax-day" >16</td>
-          <td class="tg-0lax-day" >23</td>
-          <td class="tg-0lax-day" >30</td>
+          <td class="tg-0lax-day">2</td>
+          <td class="tg-0lax-day">9</td>
+          <td class="tg-0lax-day">16</td>
+          <td class="tg-0lax-day">23</td>
+          <td class="tg-0lax-day">30</td>
           <td class="tg-0lax">Tue</td>
           <td class="tg-0lax">Wed</td>
           <td class="tg-0lax">Thu</td>
@@ -82,11 +98,11 @@
           <td class="tg-0lax">Mon</td>
         </tr>
         <tr>
-          <td class="tg-0lax-day" >3</td>
-          <td class="tg-0lax-day" >10</td>
-          <td class="tg-0lax-day" >17</td>
-          <td class="tg-0lax-day" >24</td>
-          <td class="tg-0lax-day" >31</td>
+          <td class="tg-0lax-day">3</td>
+          <td class="tg-0lax-day">10</td>
+          <td class="tg-0lax-day">17</td>
+          <td class="tg-0lax-day">24</td>
+          <td class="tg-0lax-day">31</td>
           <td class="tg-0lax">Wed</td>
           <td class="tg-0lax">Thu</td>
           <td class="tg-0lax">Fri</td>
@@ -96,10 +112,10 @@
           <td class="tg-0lax">Tue</td>
         </tr>
         <tr>
-          <td class="tg-0lax-day" >4</td>
-          <td class="tg-0lax-day" >11</td>
-          <td class="tg-0lax-day" >18</td>
-          <td class="tg-0lax-day" >25</td>
+          <td class="tg-0lax-day">4</td>
+          <td class="tg-0lax-day">11</td>
+          <td class="tg-0lax-day">18</td>
+          <td class="tg-0lax-day">25</td>
           <td class="tg-0lax"></td>
           <td class="tg-0lax">Thu</td>
           <td class="tg-0lax">Fri</td>
@@ -110,10 +126,10 @@
           <td class="tg-0lax">Wed</td>
         </tr>
         <tr>
-          <td class="tg-0lax-day" >5</td>
-          <td class="tg-0lax-day" >12</td>
-          <td class="tg-0lax-day" >19</td>
-          <td class="tg-0lax-day" >26</td>
+          <td class="tg-0lax-day">5</td>
+          <td class="tg-0lax-day">12</td>
+          <td class="tg-0lax-day">19</td>
+          <td class="tg-0lax-day">26</td>
           <td class="tg-0lax"></td>
           <td class="tg-0lax">Fri</td>
           <td class="tg-0lax">Sat</td>
@@ -124,10 +140,10 @@
           <td class="tg-0lax">Thu</td>
         </tr>
         <tr>
-          <td class="tg-0lax-day" >6</td>
-          <td class="tg-0lax-day" >13</td>
-          <td class="tg-0lax-day" >20</td>
-          <td class="tg-0lax-day" >27</td>
+          <td class="tg-0lax-day">6</td>
+          <td class="tg-0lax-day">13</td>
+          <td class="tg-0lax-day">20</td>
+          <td class="tg-0lax-day">27</td>
           <td class="tg-0lax"></td>
           <td class="tg-0lax">Sat</td>
           <td class="tg-0lax">Sun</td>
@@ -138,10 +154,10 @@
           <td class="tg-0lax">Fri</td>
         </tr>
         <tr>
-          <td class="tg-0lax-day" >7</td>
-          <td class="tg-0lax-day" >14</td>
-          <td class="tg-0lax-day" >21</td>
-          <td class="tg-0lax-day" >28</td>
+          <td class="tg-0lax-day">7</td>
+          <td class="tg-0lax-day">14</td>
+          <td class="tg-0lax-day">21</td>
+          <td class="tg-0lax-day">28</td>
           <td class="tg-0lax"></td>
           <td class="tg-0lax">Sun</td>
           <td class="tg-0lax">Mon</td>
@@ -153,12 +169,13 @@
         </tr>
       </tbody>
     </table>
-    <p id="popupUploadImages" arie-hidden="true">
-      This is testing text!!!
-  </p>
-  <div id="dialog" title="Basic dialog" style="display:none">
-    <p>This is the default dialog which is useful for displaying information. The dialog window can be moved, resized and closed with the 'x' icon.</p>
-</div>
+    <p id="popupUploadImages" arie-hidden="true">This is testing text!!!</p>
+    <div id="dialog" title="Basic dialog" style="display: none">
+      <p>
+        This is the default dialog which is useful for displaying information.
+        The dialog window can be moved, resized and closed with the 'x' icon.
+      </p>
+    </div>
 
     <script src="myCalendar.js"></script>
   </body>
