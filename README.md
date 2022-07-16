@@ -59,7 +59,7 @@
 - Then popup will open and then User needs to click on the schedule whichever he/she wants to edit.
   ![calendar](images/update.png)
 
-- Then taht schedule will come in a text box and add button will change to update.
+- Then that schedule will come in a text box and add button will change to update.
 - User change the text and click on the update button and that text will get updated .
   ![calendar](images/newSchedule.png)
 

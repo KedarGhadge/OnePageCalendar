@@ -109,7 +109,7 @@ function SetMonths(year) {
     } else if (elements[j].innerHTML === "31") elements[j].style.color = "blue";
     else if (elements[j].innerHTML === "30") elements[j].style.color = "green";
     else if (elements[j].innerHTML === checkLeapYear(year))
-      elements[j].style.color = "yellow";
+      elements[j].style.color = "brown";
   }
   //Kedar: removing selection from selected months
   elements = document.getElementsByTagName("th");
@@ -137,8 +137,7 @@ function SetMonths(year) {
       elements[j].innerHTML === "Nov"
     )
       elements[j].style.color = "green";
-    else if (elements[j].innerHTML === "Feb")
-      elements[j].style.color = "yellow";
+    else if (elements[j].innerHTML === "Feb") elements[j].style.color = "brown";
     if (elements[j].innerHTML === toMonthName(myMonth))
       elements[j].classList.add("monthSelect");
   }
@@ -349,15 +348,19 @@ function newElement() {
       };
     }
   } else {
-    document.getElementById("message_submit").value = "Add";
-    var index = aptDates.findIndex(
-      (element) =>
-        element.date == selectedDate + " " + selectedMonth + " " + myYear &&
-        element.containt == childToUpdate.textContent
-    );
-    aptDates[index].containt = document.getElementById("mytext").value;
-    childToUpdate.textContent = document.getElementById("mytext").value;
-    document.getElementById("mytext").value = "";
+    if (document.getElementById("mytext").value === "") {
+      alert("Add some valid text for update");
+    } else {
+      document.getElementById("message_submit").value = "Add";
+      var index = aptDates.findIndex(
+        (element) =>
+          element.date == selectedDate + " " + selectedMonth + " " + myYear &&
+          element.containt == childToUpdate.textContent
+      );
+      aptDates[index].containt = document.getElementById("mytext").value;
+      childToUpdate.textContent = document.getElementById("mytext").value;
+      document.getElementById("mytext").value = "";
+    }
   }
 }
 
@@ -438,8 +441,8 @@ var list = document.querySelector("ul");
 list.addEventListener("click", function (ev) {
   if (ev.target.tagName === "LI") {
     document.getElementById("mytext").value =
-      this.childNodes[0].childNodes[0].textContent;
+      ev.target.childNodes[0].textContent;
     document.getElementById("message_submit").value = "Update";
-    childToUpdate = this.childNodes[0].childNodes[0];
+    childToUpdate = ev.target.childNodes[0];
   }
 });

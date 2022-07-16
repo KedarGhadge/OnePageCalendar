@@ -16,12 +16,19 @@
       <div id="new_message" action="">
         <p id="imDate"></p>
         <ul id="myUL"></ul>
+        <hr />
         <p>
           <label for="text">Your task</label
-          ><input type="text" size="30" name="text" id="mytext" />
+          ><input
+            type="text"
+            placeholder="Add task here"
+            size="30"
+            name="text"
+            id="mytext"
+          />
         </p>
         <!-- <p><label for="body">Message</label><textarea rows="6" name="body" id="body" cols="35"></textarea></p> -->
-        <p>
+        <p id="lastp">
           <input
             type="button"
             value="Add"
@@ -29,14 +36,21 @@
             id="message_submit"
             onclick="newElement()"
           />
-          or <a class="mclose" href="/">Cancel</a>
+
+          <input
+            type="button"
+            id="message_cancel"
+            value="X"
+            class="mclose"
+            href="/"
+          />
         </p>
       </div>
     </div>
     <table class="tg">
       <thead>
         <tr>
-          <th class="" colspan="5" rowspan="3">
+          <th class="tyear" colspan="5" rowspan="3">
             <button id="L-arrow" onclick="prevYear()">&#171;</button>&nbsp;
             &nbsp; &nbsp; <span id="calendar-year">&nbsp; &nbsp; &nbsp; </span
             ><button id="R-arrow" onclick="nextYear()">&#187;</button>
@@ -169,13 +183,6 @@
         </tr>
       </tbody>
     </table>
-    <p id="popupUploadImages" arie-hidden="true">This is testing text!!!</p>
-    <div id="dialog" title="Basic dialog" style="display: none">
-      <p>
-        This is the default dialog which is useful for displaying information.
-        The dialog window can be moved, resized and closed with the 'x' icon.
-      </p>
-    </div>
 
     <script src="myCalendar.js"></script>
   </body>

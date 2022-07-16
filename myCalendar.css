@@ -4,9 +4,7 @@
   width: 65%;
 }
 .tg td {
-  border-color: black;
-  border-style: solid;
-  border-width: 1px;
+  border: 1px solid #ddd !important;
   font-family: Arial, sans-serif;
   font-size: 14px;
   overflow: hidden;
@@ -14,9 +12,7 @@
   word-break: normal;
 }
 .tg th {
-  border-color: black;
-  border-style: solid;
-  border-width: 1px;
+  border: 1px solid #ddd !important;
   font-family: Arial, sans-serif;
   font-size: 14px;
   font-weight: normal;
@@ -31,16 +27,34 @@
 }
 
 #L-arrow {
-  color: red;
-  text-align: left;
+  float: left;
+  height: 80px;
+  border: 2px solid #ccc;
+  transition-duration: 0.4s;
+  font-size: larger;
+  background-color: white;
+}
+#L-arrow:hover {
+  background-color: #999999; /* Green */
+  color: white;
 }
 #R-arrow {
-  text-align: right;
+  float: right;
+  height: 80px;
+  border: 2px solid #ccc;
+  transition-duration: 0.4s;
+  font-size: larger;
+  background-color: white;
+}
+#R-arrow:hover {
+  background-color: #999999; /* Green */
+  color: white;
 }
 #calendar-year {
   text-align: center;
   font-size: 75px;
   padding: 10px 5px;
+  color: cornflowerblue;
 }
 
 .messagepop {
@@ -63,7 +77,7 @@ label {
   text-indent: -15px;
 }
 
-.messagepop p,
+.messagepop,
 .messagepop.div {
   border-bottom: 1px solid #efefef;
   margin: 8px 0;
@@ -73,11 +87,15 @@ label {
 .booked {
   display: block;
   font-weight: bold;
+  background-color: bisque;
 }
 
 .monthSelect {
   display: block;
   font-weight: bold;
+  background-color: #ddd;
+  border-style: inset;
+  border-radius: 2%;
 }
 
 ul {
@@ -91,15 +109,22 @@ ul li {
   position: relative;
   padding: 12px 8px 12px 40px;
   list-style-type: none;
-  background: #eee;
+  background: #ddd;
   font-size: 18px;
   transition: 0.2s;
+  border-bottom: 1px solid #22222242;
 
   /* make the list items unselectable */
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+}
+
+/* Darker background-color on hover */
+ul li:hover {
+  background: #eee;
+  transform: scale(1.05);
 }
 
 /* Style the close button */
@@ -118,19 +143,64 @@ ul li {
   display: none;
 }
 .today {
-  font-weight: 20px;
-  background-color: #f44336;
+  font-weight: bolder;
+  background-color: #f7b9b5;
+  border-style: inset;
 }
 
 #message_submit {
   padding: 5px;
   width: 25%;
-  background: #d9d9d9;
-  color: #555;
+  border: 2px solid #ccc;
+  transition-duration: 0.4s;
   float: left;
   text-align: center;
   font-size: 14px;
   cursor: pointer;
   transition: 0.3s;
-  border-radius: 0;
+  border-radius: 4px;
+}
+
+#message_submit:hover {
+  background-color: #45a049;
+  color: white;
+}
+
+#message_cancel {
+  line-height: 12px;
+  width: 18px;
+  font-size: 12pt;
+  font-family: tahoma;
+  margin-top: 1px;
+  margin-right: 2px;
+  margin-left: 2px;
+  position: absolute;
+  top: 3%;
+  right: 3%;
+  background-color: white;
+  border: none;
+  padding: 12px 16px 12px 16px;
+}
+
+#message_cancel:hover {
+  background-color: #f44336;
+  color: white;
+}
+
+#mytext {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-family: Helvetica;
+}
+#imDate {
+  font-family: Helvetica;
+  color: #6a5eb4;
+}
+label {
+  font-family: Helvetica;
 }
