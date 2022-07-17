@@ -7,31 +7,34 @@
 - [6. User can Edit the schedule](#6-user-can-edit-the-schedule)
 - [7. User can delete any schedule.](#7-user-can-delete-any-schedule)
 
+<!--START_SECTION:waka-->
+<!--END_SECTION:waka-->
+
 # 0. Calendar Introduction
 
-- Whe you run calendar app on browser you will see something like shown in image.
-- Redhighlighted date is today's date.
-- By Default curent month is getting selected with current year
+- When you run calendar app on browser you will see something like shown in image.
+- Red highlighted date is today's date.
+- By Default current month is getting selected with current year
 
   ![calendar](images/calendar1.png)
 
 # 1. Calendar's basic functionality
 
-- From left and right arrow shown in image we can change theyear and accordingly months will get changed.
+- From left and right arrow shown in image we can change the year and accordingly months will get changed.
 - Dates and Days remains as it is.
 
 # 2. Show month wise date
 
 - You can change month by clicking on month section.
 - For all months 31 days will be shown, and this is not a error. e.g. If you click on Jun month and still it will show a 31 days.
-- But, if you try to click on the 31 of Jun month then it will give an popup of
+- But, if you try to click on the 31 of Jun month then it will give an popup of not valid date
 
   ![calendar](images/NotAValidDate.png)
 
-- Css has been applied for avoid the confusion.
+- CSS has been applied for avoid the confusion.
 - Months which has 31 days are shown in blue.
 - Months which has 30 days are shown in green and February is showing in Yellow.
-- Similar css has been applied on date 28,29,30 and 31.
+- Similar CSS has been applied on date 28,29,30 and 31.
 - On Leap year 29 will be shown in yellow.
 
 # 3. Show Scheduled date with highlighted cell
@@ -49,7 +52,7 @@
 # 5. User can add schedule
 
 - In text box User can add schedule and click on the add button
-- Then that schedule is automatically get added for a particualr date. and will visible on popup
+- Then that schedule is automatically get added for a particular date. and will visible on popup
   ![calendar](images/schedule.png)
 - As my schedule has been added.
 
