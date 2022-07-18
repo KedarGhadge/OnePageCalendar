@@ -159,7 +159,7 @@ ul li:hover {
 #message_submit {
   padding: 5px;
   width: 25%;
-  border: 2px solid #ccc;
+  border: 1px solid #e8e8e8;
   transition-duration: 0.4s;
   float: left;
   text-align: center;
@@ -167,8 +167,8 @@ ul li:hover {
   cursor: pointer;
   transition: 0.3s;
   border-radius: 4px;
-  background: linear-gradient(145deg, white, #cacaca);
-  box-shadow: 3px 3px 7px #bebebe, -3px -3px 7px #ffffff;
+  background: #ffffff;
+  box-shadow: 3px 3px 7px #c5c5c5, -3px -3px 7px #fff;
 }
 
 #message_submit:hover {
