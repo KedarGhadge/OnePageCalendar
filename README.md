@@ -6,6 +6,7 @@
 - [5. User can add schedule](#5-user-can-add-schedule)
 - [6. User can Edit the schedule](#6-user-can-edit-the-schedule)
 - [7. User can delete any schedule.](#7-user-can-delete-any-schedule)
+- [8. Changes to Add](#8-changes-to-add)
 
 <!--START_SECTION:waka-->
 <!--END_SECTION:waka-->
@@ -70,3 +71,8 @@
 
 - By clicking x button in front of any schedule, user can delete that schedule.
   ![calendar](images/delete.png)
+
+  # 8. Changes to Add
+
+- [ ] Remove date 31 from month of 30 days.
+- [ ] Do similar necessary changes for February month.
