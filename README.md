@@ -11,7 +11,7 @@
 <!--START_SECTION:waka-->
 <!--END_SECTION:waka-->
 
-[![Generic badge](https://img.shields.io/badge/v-1.0-skyblue.svg)](https://shields.io/)
+[![Generic badge](https://img.shields.io/badge/v-1.0.0.0-skyblue.svg)](https://shields.io/)
 
 # 0. Calendar Introduction
 
@@ -25,6 +25,7 @@
 
 - From left and right arrow shown in image we can change the year and accordingly months will get changed.
 - Dates and Days remains as it is.
+  ![calendar](images/calendar1.gif)
 
 # 2. Show month wise date
 
@@ -32,7 +33,7 @@
 - For all months 31 days will be shown, and this is not a error. e.g. If you click on Jun month and still it will show a 31 days.
 - But, if you try to click on the 31 of Jun month then it will give an popup of not valid date
 
-  ![calendar](images/NotAValidDate.png)
+  ![calendar](images/NotAValidDate.gif)
 
 - CSS has been applied for avoid the confusion.
 - Months which has 31 days are shown in blue.
@@ -44,11 +45,11 @@
 
 ![calendar](images/ScheduledDate.jpg)
 
-- As shown in image date 17 is schedulled date.
+- As shown in image date 12 is schedulled date.
 
 # 4. Clicking on date will have a popup
 
-![calendar](images/popup.png)
+![calendar](images/popup.gif)
 
 - On click on date popup will get created as show in image.
 
@@ -56,23 +57,22 @@
 
 - In text box User can add schedule and click on the add button
 - Then that schedule is automatically get added for a particular date. and will visible on popup
-  ![calendar](images/schedule.png)
+  ![calendar](images/schedule.gif)
 - As my schedule has been added.
 
 # 6. User can Edit the schedule
 
 - For editing a schedule User need to click on the scheduled date.
 - Then popup will open and then User needs to click on the schedule whichever he/she wants to edit.
-  ![calendar](images/update.png)
+  ![calendar](images/update.gif)
 
 - Then that schedule will come in a text box and add button will change to update.
 - User change the text and click on the update button and that text will get updated .
-  ![calendar](images/newSchedule.png)
 
 # 7. User can delete any schedule.
 
 - By clicking x button in front of any schedule, user can delete that schedule.
-  ![calendar](images/delete.png)
+  ![calendar](images/delete.gif)
 
   # 8. Changes to Add
 
@@ -80,3 +80,5 @@
   | ----- | ------------------------------------------------ | ------------------------------- |
   | 1     | Remove date 31 from month of 30 days.            | ![](https://progress-bar.dev/0) |
   | 2     | Do similar necessary changes for February month. | ![](https://progress-bar.dev/0) |
+
+[![Github gists](https://gist-count.vercel.app/api?username=KedarGhadge)](https://gist.github.com/KedarGhadge)
