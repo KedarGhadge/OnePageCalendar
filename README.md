@@ -11,7 +11,7 @@
 <!--START_SECTION:waka-->
 <!--END_SECTION:waka-->
 
-[![Generic badge](https://img.shields.io/badge/v-1.0.0.0-skyblue.svg)](https://shields.io/)
+[![Generic badge](https://img.shields.io/badge/v-1.0.0.1-skyblue.svg)](https://shields.io/)
 
 # 0. Calendar Introduction
 
@@ -80,5 +80,3 @@
   | ----- | ------------------------------------------------ | ------------------------------- |
   | 1     | Remove date 31 from month of 30 days.            | ![](https://progress-bar.dev/0) |
   | 2     | Do similar necessary changes for February month. | ![](https://progress-bar.dev/0) |
-
-[![Github gists](https://gist-count.vercel.app/api?username=KedarGhadge)](https://gist.github.com/KedarGhadge)
