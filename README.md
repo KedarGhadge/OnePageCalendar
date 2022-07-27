@@ -78,5 +78,5 @@
 
   | Index | Task                                             | Completion                      |
   | ----- | ------------------------------------------------ | ------------------------------- |
-  | 1     | Remove date 31 from month of 30 days.            | ![](https://progress-bar.dev/0) |
+  | 1     | Remove date 31 from month of 30 days.            | ![](https://progress-bar.dev/1) |
   | 2     | Do similar necessary changes for February month. | ![](https://progress-bar.dev/0) |
